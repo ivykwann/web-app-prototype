@@ -1,0 +1,11 @@
+{
+  "name": "web-app-prototype",
+  "version": "1.0.0",
+  "description": "Tracks frozen yoghurt orders",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivy Kwan",
+  "license": "ISC"
+}
