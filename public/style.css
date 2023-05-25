@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fffae6;
+  }
+
+  html {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header {
+    height: 100%;
+    padding: 30px;
+  }
+
+  header > h1 {
+    padding-block: 100px 50px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    background-image: url(header.png);
+    background-size: 100% ;
+  }
+
+ 
+  h2 {
+    margin-bottom: 1em;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  main {
+    height: calc(100vh - 70px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "orderform orderlist";
+  }
+
+  main section {
+    grid-area: orderform;
+    display: flex;
+    height: 30vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #orderform {
+    width: 100%;
+    padding: 25px 40px;
+    border-radius: 10px;
+  }
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+ 
+
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    
+  }

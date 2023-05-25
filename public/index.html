@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>froYo keeper</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -12,10 +14,64 @@
     </header>
     <main>
         <section>
-            <form id="taskform">
+            <form id="orderform">
                 <h2>My Order</h2>
+                <div class="form-row">
+                    <label for = "orderStore">Store</label>
+                    <input type = "text" name = "orderStore" id = "orderStore" required = "true" />
+                </div>
+                <div class="form-row">
+                    <label for = "orderName">Name Your Order</label>
+                    <input type="text" name = "orderName" id="orderName" required="true"/>
+                </div>
+                <div class="form-row">
+                    <label for = "orderFlavours">Flavours</label>
+                    <input type="text" name="orderFlavours" id="orderName" required="true"/>
+                </div>
+                <div class="container">
+                    <div class="wrap">
+                        <label for="orderToppings">Toppings</label>
+                        <a href="#" class="add">&plus;</a> 
+                    </div>
+            
+                </div>
+                <div class="form-row">
+                    <label for="orderSize">Size</label>
+                    <select id="orderSize" name="orderSize" required="true">
+                        <option value="">Select size</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="orderRating">Rating</label>
+                    <select id="orderRating" name="orderRating" required="true">
+                        <option value="">Select Rating</option>
+                        <option value="1 Star">1 Star</option>
+                        <option value="2 Stars">2 Stars</option>
+                        <option value="3 Stars">3 Stars</option>
+                        <option value="4 Stars">4 Stars</option>
+                        <option value="5 Stars">5 Stars</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for = "orderNotes">Notes</label>
+                    <input type="text" name = "orderNotes" id="orderNotes" required="true"/>
+                </div>
+               
+                <div class="button">
+                    <input type="submit" value="Save">
+                </div>
+        
             </form>
         </section>
+        <aside>
+            <ul id="orderlist">
+                <label for="orderlist">My Gallery</label>
+            </ul>
+        </aside>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
