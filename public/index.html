@@ -17,26 +17,34 @@
             <form id="orderform">
                 <h2>My Order</h2>
                 <div class="form-row">
-                    <label for = "orderStore">Store</label>
+                    <label for = "orderStore">Store</label><br>
                     <input type = "text" name = "orderStore" id = "orderStore" required = "true" />
                 </div>
                 <div class="form-row">
-                    <label for = "orderName">Name Your Order</label>
+                    <label for = "orderName">Name Your Order</label><br>
                     <input type="text" name = "orderName" id="orderName" required="true"/>
                 </div>
                 <div class="form-row">
-                    <label for = "orderFlavours">Flavours</label>
+                    <label for = "orderFlavours">Flavours</label><br>
                     <input type="text" name="orderFlavours" id="orderName" required="true"/>
                 </div>
-                <div class="container">
-                    <div class="wrap">
-                        <label for="orderToppings">Toppings</label>
-                        <a href="#" class="add">&plus;</a> 
-                    </div>
+              
+                <div class="form-row">
+                    <div id="input-container">
+                        <label for="orderToppings">Toppings</label><br>
+                        <input type="text" id="input-field">
+                        <button id="add-button">&plus;</button>
+                      </div>
+                      <div id="dynamic-inputs-container"></div>
+        
+                </div>
+                
+
+                </div>
             
                 </div>
                 <div class="form-row">
-                    <label for="orderSize">Size</label>
+                    <label for="orderSize">Size</label><br>
                     <select id="orderSize" name="orderSize" required="true">
                         <option value="">Select size</option>
                         <option value="Small">Small</option>
@@ -45,32 +53,33 @@
                     </select>
                 </div>
                 <div class="form-row">
-                    <label for="orderRating">Rating</label>
+                    <label for="orderRating">Rating</label><br>
                     <select id="orderRating" name="orderRating" required="true">
                         <option value="">Select Rating</option>
-                        <option value="1 Star">1 Star</option>
-                        <option value="2 Stars">2 Stars</option>
-                        <option value="3 Stars">3 Stars</option>
-                        <option value="4 Stars">4 Stars</option>
-                        <option value="5 Stars">5 Stars</option>
+                        <option value="1 Star">1 Star &#11088;</option>
+                        <option value="2 Stars">2 Stars &#11088; &#11088;</option>
+                        <option value="3 Stars">3 Stars  &#11088;  &#11088; &#11088;</option>
+                        <option value="4 Stars">4 Stars  &#11088; &#11088; &#11088; &#11088;</option>
+                        <option value="5 Stars">5 Stars &#11088; &#11088; &#11088; &#11088; &#11088;</option>
                     </select>
                 </div>
                 <div class="form-row">
-                    <label for = "orderNotes">Notes</label>
+                    <label for = "orderNotes">Notes</label><br>
                     <input type="text" name = "orderNotes" id="orderNotes" required="true"/>
                 </div>
                
                 <div class="button">
                     <input type="submit" value="Save">
                 </div>
-        
             </form>
         </section>
-        <aside>
-            <ul id="orderlist">
-                <label for="orderlist">My Gallery</label>
-            </ul>
-        </aside>
+        <section>
+           <form id="orderlist">
+            <h2>My Gallery</h2>
+           </form>
+               
+        </section>
+   
     </main>
     <script src="script.js"></script>
 </body>
