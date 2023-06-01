@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,41 +9,49 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <!-- Header Image and Title -->
     <header>
         <h1>FroYo Keeper</h1>
     </header>
+
+    <!-- Main section of the page which includes the order form and order gallery -->
     <main>
+    <!-- Order form section -->
         <section>
             <form id="orderform">
                 <h2>My Order</h2>
+               
+                <!-- Store label and input box -->
                 <div class="form-row">
-                    <label for = "orderStore">Store</label><br>
-                    <input type = "text" name = "orderStore" id = "orderStore" required = "true" />
+                    <label for="orderStore">Store</label><br>
+                    <input type="text" name="orderStore" id="orderStore" required="true" />
                 </div>
+
+                 <!-- Order label and input box -->
                 <div class="form-row">
-                    <label for = "orderName">Name Your Order</label><br>
-                    <input type="text" name = "orderName" id="orderName" required="true"/>
+                    <label for="orderName">Name Your Order</label><br>
+                    <input type="text" name="orderName" id="orderName" required="true" />
                 </div>
+
+                <!-- Flavours label and input box -->
                 <div class="form-row">
-                    <label for = "orderFlavours">Flavours</label><br>
-                    <input type="text" name="orderFlavours" id="orderName" required="true"/>
+                    <label for="orderFlavours">Flavours</label><br>
+                    <input type="text" name="orderFlavours" id="orderFlavours" required="true" />
                 </div>
-              
+                
+                <!-- Toppings label and dynamic input box -->
                 <div class="form-row">
                     <div id="input-container">
                         <label for="orderToppings">Toppings</label><br>
                         <input type="text" id="input-field">
                         <button id="add-button">&plus;</button>
-                      </div>
-                      <div id="dynamic-inputs-container"></div>
-        
+                    </div>
+                    <div id="dynamic-inputs-container"></div>
                 </div>
-                
 
-                </div>
-            
-                </div>
+                 <!-- Size label and input box with option values -->
                 <div class="form-row">
                     <label for="orderSize">Size</label><br>
                     <select id="orderSize" name="orderSize" required="true">
@@ -52,34 +61,41 @@
                         <option value="Large">Large</option>
                     </select>
                 </div>
+
+                <!-- Rating label and input box with option values -->
                 <div class="form-row">
                     <label for="orderRating">Rating</label><br>
                     <select id="orderRating" name="orderRating" required="true">
                         <option value="">Select Rating</option>
                         <option value="1 Star">1 Star &#11088;</option>
                         <option value="2 Stars">2 Stars &#11088; &#11088;</option>
-                        <option value="3 Stars">3 Stars  &#11088;  &#11088; &#11088;</option>
-                        <option value="4 Stars">4 Stars  &#11088; &#11088; &#11088; &#11088;</option>
+                        <option value="3 Stars">3 Stars &#11088; &#11088; &#11088;</option>
+                        <option value="4 Stars">4 Stars &#11088; &#11088; &#11088; &#11088;</option>
                         <option value="5 Stars">5 Stars &#11088; &#11088; &#11088; &#11088; &#11088;</option>
                     </select>
                 </div>
+
+                 <!-- Notes label and input box -->
                 <div class="form-row">
-                    <label for = "orderNotes">Notes</label><br>
-                    <input type="text" name = "orderNotes" id="orderNotes" required="true"/>
+                    <label for="orderNotes">Notes</label><br>
+                    <input type="text" name="orderNotes" id="orderNotes" required="true" />
                 </div>
-               
+
                 <div class="button">
                     <input type="submit" value="Save">
                 </div>
             </form>
         </section>
+
+         <!-- Order gallery section -->
         <section>
-           <form id="orderlist">
-            <h2>My Gallery</h2>
-           </form>
-               
+            <form>
+                <h2>My Gallery</h2>
+                <ul id="orderlist">
+                </ul>
+            </form>
+
         </section>
-   
     </main>
     <script src="script.js"></script>
 </body>
