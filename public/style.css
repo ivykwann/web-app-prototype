@@ -150,7 +150,35 @@
     transition: background-color 0.3s ease;
   }
   
- 
+#orderlist li {
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+
+.delete-button {
+  background-color: grey;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: inline-block;
+  width: 60px;
+  margin-top: 10px;
+  
+}
+
+.delete-button::before {
+  content: "";
+}
+
 
  /* For smaller screens - responsiveness */
 @media screen and (max-width: 768px) {

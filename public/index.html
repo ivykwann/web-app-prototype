@@ -45,7 +45,7 @@
                 <div class="form-row">
                     <div id="input-container">
                         <label for="orderToppings">Toppings</label><br>
-                        <input type="text" id="input-field">
+                        <input type="text" class="toppings-input" id="input-field">
                         <button id="add-button">&plus;</button>
                     </div>
                     <div id="dynamic-inputs-container"></div>
@@ -97,6 +97,18 @@
 
         </section>
     </main>
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+          <h2>Delete Order</h2>
+          <p id="deleteModalMessage">Delete this item?</p>
+          <div class="modal-buttons">
+            <button id="cancelButton">Cancel</button>
+            <button id="confirmButton">Delete</button>
+          </div>
+        </div>
+      </div>
+   
+  
     <script src="script.js"></script>
 </body>
 </html>

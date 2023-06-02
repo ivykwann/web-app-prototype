@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function() {
 //code for filling out the form
 const form = document.getElementById('orderform');
 const orderlist = document.querySelector('#orderlist');
+const cancelBtn = document.getElementById('cancelButton');
+const confirmBtn = document.getElementById('confirmButton');
+let deleteItemId;
 
 //Create an array for the orders
 var orderList = [];
@@ -86,40 +89,38 @@ form.addEventListener('submit', function(event){
 }
 
 
- function displayOrder(order) {
+function displayOrder(order) {
   let item = document.createElement('li');
   item.setAttribute("data-id", order.id);
+
+  let toppingsString = order.toppings.join(', ');
+
   item.innerHTML = 
-    `<p><strong>${order.name}</strong><br> Flavour:${order.flavours}<br> 
-    Toppings::${order.toppings}<br> Size:${order.size}<br>
-    Rating:${order.rating}<br> Notes:${order.notes} </p>`;
+  item.innerHTML = 
+  `<p><strong>${order.name}</strong><br> Flavour: ${order.flavours}<br> 
+  Toppings: ${order.toppings.join(', ')}<br> Size: ${order.size}<br>
+  Rating: ${order.rating}<br> Notes: ${order.notes} </p>`;
+
 
   orderlist.appendChild(item);
 
   form.reset();
 
-//Delete button
-  let deleteButton = document.createElement('button');
-  let delButtonText = document.createTextNode('Delete');
-  deleteButton.appendChild(delButtonText);
-  item.appendChild(deleteButton);
+ //Delete button
+ let deleteButton = document.createElement('button');
+ deleteButton.className = 'delete-button';
+ let delButtonText = document.createTextNode('Delete');
+ deleteButton.appendChild(delButtonText);
+ deleteButton.classList.add('delete-button'); // Add delete-button class
+ item.appendChild(deleteButton);
 
-  deleteButton.addEventListener('click', function(event){
-    item.remove();
-    orderList.forEach(function(orderArrayElement, orderArrayIndex){
-      if (orderArrayElement.id==item.getAttribute('data-id')){
-        orderList.splice(orderArrayIndex,1)
-      }
-  
-    })
-  })
-
- }
-
-
-
-
-
-
-
-
+ deleteButton.addEventListener('click', function(event){
+   item.remove();
+   orderList.forEach(function(orderArrayElement, orderArrayIndex){
+     if (orderArrayElement.id==item.getAttribute('data-id')){
+       orderList.splice(orderArrayIndex,1)
+     }
+ 
+   })
+ })
+}
