@@ -12,6 +12,7 @@ Make a list of orders that they can easily view and remind them what they liked 
 
 **Development Process**
 
-![Figma webpage design](Figmawebpagedesign.png)
+![Figma webpage design] <img width="573" alt="Screen Shot 2023-06-03 at 12 24 38 am" src="https://github.com/ivykwann/web-app-prototype/assets/128759669/6b3163e4-42f0-4c3b-b641-fcff20a6ab04">
+
 
 
