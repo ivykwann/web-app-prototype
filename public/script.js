@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //End of dynamic field input for order toppings
 
 
-//code for filling out the form
+//Get form and order list elements
 const form = document.getElementById('orderform');
 const orderlist = document.querySelector('#orderlist');
 const cancelBtn = document.getElementById('cancelButton');
@@ -48,6 +48,7 @@ var orderList = [];
 
 //Create a function and give input parameters for each object
 function addOrder(store, name, flavours, toppings, size, rating, notes) {
+  //create an order object
   let order = {
     id: Date.now(), // Generate a unique timestamp as the order ID
     store,
@@ -58,27 +59,31 @@ function addOrder(store, name, flavours, toppings, size, rating, notes) {
     rating,
     notes
   }
-  
+  //Add the order to the order list array
   orderList.push(order);
+
+  //Display the order on the page
   displayOrder(order);
   
 }
-
+//Event listener for form submission
 form.addEventListener('submit', function(event){
   //Block default submission behaviour
   event.preventDefault();
   console.log(form)
+
+  //Extract form input values and add to order
   addOrder(
     form.elements.orderStore.value,
     form.elements.orderName.value,
     form.elements.orderFlavours.value, getToppings(),
-  
     form.elements.orderSize.value,
     form.elements.orderRating.value,
     form.elements.orderNotes.value,
   )
  });
 
+ //Function to get the toppings from the input field
  function getToppings() {
   let toppings = [];
   const inputFields = document.querySelectorAll('.toppings-input');
@@ -88,7 +93,7 @@ form.addEventListener('submit', function(event){
   return toppings;
 }
 
-
+//Function to display an order to the page
 function displayOrder(order) {
   let item = document.createElement('li');
   item.setAttribute("data-id", order.id);
@@ -101,12 +106,13 @@ function displayOrder(order) {
   Toppings: ${order.toppings.join(', ')}<br> Size: ${order.size}<br>
   Rating: ${order.rating}<br> Notes: ${order.notes} </p>`;
 
-
+//Add the order item to the order list
   orderlist.appendChild(item);
 
+  //Reset the form fields
   form.reset();
 
- //Delete button
+ //Create a delete button for the order item
  let deleteButton = document.createElement('button');
  deleteButton.className = 'delete-button';
  let delButtonText = document.createTextNode('Delete');
@@ -114,8 +120,13 @@ function displayOrder(order) {
  deleteButton.classList.add('delete-button'); // Add delete-button class
  item.appendChild(deleteButton);
 
+ //Event listener for delete button click
  deleteButton.addEventListener('click', function(event){
+
+  //Remove order item from page
    item.remove();
+
+   //Find and remove the order from the order list array
    orderList.forEach(function(orderArrayElement, orderArrayIndex){
      if (orderArrayElement.id==item.getAttribute('data-id')){
        orderList.splice(orderArrayIndex,1)
